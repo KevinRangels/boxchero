@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>LLego</title>
+</head>
+<body>
+    <nav class="navMain">
+        <div class="container nav">
+            <div class="nav__brand">
+                <img src="assets/images/logo.png" class="img-fluid">
+            </div>
+            <div class="nav__btns d-none d-md-flex">
+                <div class="nav__btnsTop">
+                    <ul>
+                        <li>
+                            <a href="#">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#">Calculadora</a>
+                        </li>
+                        <li>
+                            <a href="#">Tarifas</a>
+                        </li>
+                        <li>
+                            <a href="#">Servicios</a>
+                        </li>
+                        <li>
+                            <button class="btn__loggin" data-toggle="modal" data-target="#modalLogin">
+                                <i class="fas fa-user-circle mr-2"></i>
+                                Login
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn__register" data-toggle="modal" data-target="#modalRegister">
+                                <i class="fas fa-user-plus mr-2"></i>
+                                Registrarse
+                            </button>
+                        </li>
+                        <!-- <li>
+                            <button class="nav__btnUser">
+                                <i class="fas fa-user-circle mr-1"></i>
+                                Rodrigo
+                                <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <div class="nav__btnCar">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>1</span>
+                            </div>
+                        </li> -->
+                        <!-- <li>
+                            <i class="fas fa-search"></i>
+                        </li> -->
+                    </ul>
+                </div>
+                <!-- <div class="nav__btnAuth">
+                    <button class="btn__loggin" data-toggle="modal" data-target="#modalLogin">
+                        <i class="fas fa-user-circle mr-2"></i>
+                        Login
+                    </button>
+                    <button class="btn__register" data-toggle="modal" data-target="#modalRegister">
+                        <i class="fas fa-user-plus mr-2"></i>
+                        Registrarse
+                    </button>
+                </div> -->
+            </div>
+            <!-- Menu Responsive -->
+            <div class="nav__btns d-md-none">
+                <i class="fas fa-bars d-md-none nav__btnMovil" onclick="handleViewMenuMovil()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div id="menuAdmin__movil" class="menuAdmin__overlay d-md-none">
+        <a class="menuAdmin__closebtn" onclick="handleCloseMenuMovil()">&times;</a>
+        <div class="menuAdmin__overlay-content">
+            <a
+                href="/incio"
+                onclick="handleCloseMenuMovil()"
+            >
+                Inicio
+            </a>
+            <a
+                href="/calculadoras"
+                onclick="handleCloseMenuMovil()"
+            >
+                Calculadora
+            </a>
+            <a
+                href="/tarifas"
+                onclick="handleCloseMenuMovil()"
+            >
+                Tarifas
+            </a>
+            <a
+                href="/servicios"
+                onclick="handleCloseMenuMovil()"
+            >
+                Servicios
+            </a>
+            <div class="nav__btnAuth mt-4">
+                <button class="btn__loggin">
+                    <i class="fas fa-user-circle mr-2"></i>
+                    Login
+                </button>
+                <button class="btn__register">
+                    <i class="fas fa-user-plus mr-2"></i>
+                    Registrarse
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="header mb-5">
+        <div class="row w-100 mb-4 header__navsearch">
+            <div class="col-12 justify-content-center d-flex">
+                <div class="navSearch">
+                    <h2 class="mb-3">Compra lo que quieras</h2>
+                    <div class="navSearch__input">
+                        <input type="text" placeholder="Ingresa el link de de una tienda en USA o Europa">
+                        <div class="navSearch__inputIcon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row container header__containers">
+            <div class="col-md-5 d-flex flex-column justify-content-center">
+                <h4>Registrate</h4>
+                <p>Tú compras, nosotros hacemos el resto.</p>
+                <div class="header__btns mt-4">
+                    <button class="header__btnRegister mr-4">
+                        Registrarse
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="header__btnTermn">
+                        Terminos y Condiciones
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-7 d-flex justify-content-center align-items-center">
+                <div class="header__image">
+                    <img src="assets/images/header2.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="calculate container mb-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Calcula el costo del envío de tu compra</h4>
+                <p class="w-75">Digita el precio y peso de tu compra y obtén tu costo por el servicio de importación. Y si prefieres obtener un precio exacto y garantizado haz tu cotización.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="calculateRigth">
+                    <div class="calculateRigth__img">
+                        <img src="assets/images/calculator.png" class="img-fluid" />
+                    </div>
+                    <div class="calculateRigth__text">
+                        <p class="calculateRigth__text1">Calcula el precio</p>
+                        <p class="calculateRigth__text2">De tu envío</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps container">
+        <div class="row">
+            <div class="col-md-4 steps__step">
+                <div class="steps__image">
+                    <img src="http://carlcourier.com/wp-content/uploads/2019/11/icon-box-1.png" class="img-fluid" />
+                </div>
+                <div class="steps__info">
+                    <h6 class="my-3">Compra</h6>
+                    <p>Compra en tu tienda favorita Amazon, Ebay, 6pm, Target, Walmart, Best Buy, Shein, Aliexpress y cualquier tienda de tu preferencia.</p>
+                </div>
+            </div>
+            <div class="col-md-4 steps__step">
+                <div class="steps__image">
+                    <img src="http://carlcourier.com/wp-content/uploads/2019/11/icon-box-1.png" class="img-fluid" />
+                </div>
+                <div class="steps__info">
+                    <h6 class="my-3">Casillero de envío</h6>
+                    <p>Busca los productos que quieres, compra, envíalo.</p>
+                </div>
+            </div>
+            <div class="col-md-4 steps__step">
+                <div class="steps__image">
+                    <img src="http://carlcourier.com/wp-content/uploads/2019/11/icon-box-1.png" class="img-fluid" />
+                </div>
+                <div class="steps__info">
+                    <h6 class="my-3">Prealerta</h6>
+                    <p>Una vez hayas realizado tu compra, ingresa a tu usuario y ve a la sección de prealerta, ahí adjunta el recibo de tu compra y el número de tracking.</p>       
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trackingPages container">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="trackingPages__images">
+                        <img src="http://carlcourier.com/wp-content/uploads/2020/08/amazon.jpg" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="trackingPages__images">
+                        <img src="http://carlcourier.com/wp-content/uploads/2020/11/Walmart-logo-4.png" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="trackingPages__images">
+                        <img src="http://carlcourier.com/wp-content/uploads/2020/08/ebay.jpg" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="trackingPages__images">
+                        <img src="http://carlcourier.com/wp-content/uploads/2020/08/bestbuy.jpg" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="trackingPages__images">
+                        <img src="http://carlcourier.com/wp-content/uploads/2020/08/6pm.jpg" class="img-fluid" />
+                    </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        
+        </div>
+
+    </section>
+
+    <section class="counters container mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h4>Somos una empresa <span>lista</span> para atenderte con tus pedidos</h4>
+                <p class="counter__subtitle">Pide lo que necesitas nosotros estamos listos para atenderte.</p>
+                <div class="counters__container">
+                    <div class="counters__counterSection">
+                        <span class="counter__satisfaction">100%</span>
+                        <p>Satisfacción</p>
+                    </div>
+                    <div class="counters__counterSectionLine"></div>
+                    <div class="counters__counterSection">
+                        <span class="counter__packages">596+</span>
+                        <p>Paquetes</p>
+                    </div>
+                    <div class="counters__counterSectionLine"></div>
+                    <div class="counters__counterSection">
+                        <span class="counter__deliveries">198</span>
+                        <p>Envios</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="counters__img">
+                    <img src="https://llego.com.sv/wp-content/uploads/2021/04/llego_principal-06-01-1024x683.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer__img pr-4">
+                        <img src="assets/images/logo.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="footer__btnSocial mt-2">
+                        <a href="" class="mx-3">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5>Registrate</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Inicia sesión</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Términos y condiciones</a>
+                        </li>
+                        <li>
+                            <a href="#">Preguntas Frecuentes</a>
+                        </li>
+                        <li>
+                            <a href="#">Importaciones con permiso especial</a>
+                        </li>
+                        <li>
+                            <a href="#">Productos que requieren manejo especial</a>
+                        </li>
+                        <li>
+                            <a href="#">Artículos Prohibidos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Sobre Llego</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Contactanos</a>
+                        </li>
+                        <li>
+                            <a href="#">Tarifas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footerBase d-flex justify-content-center py-2">
+            <p class="mb-0">©2021, <a href="">boxchero.com</a> Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL LOGIN -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal__btnClose">
+                    <i class="fas fa-times" data-dismiss="modal" aria-label="Close"></i>
+                </div>
+                <div class="modalLogin">
+                    <h5 class="text-center">Iniciar sesion</h5>
+                    <form>
+                        <label class="mb-0">Usuario</label>
+                        <div class="modalLogin__input">
+                            <i class="fas fa-user mr-3"></i>
+                            <input type="text" placeholder="Ingresa tu usario">
+                        </div>
+                        <label class="mb-0">Contraseña</label>
+                        <div class="modalLogin__input mb-0">
+                            <i class="fas fa-lock mr-3"></i>
+                            <input type="password" placeholder="Ingresa tu contraseña">
+                        </div>
+                        <div class="d-flex justify-content-end mb-4 mt-1">
+                            <a class="modalLogin__btnForgot" href="">Olvidastes tu contraseña? </a>
+                        </div>
+                        <button>Entrar</button>
+                    </form>
+                    <div class="modalLogin__noAccount">
+                        <p class="mr-2">No tienes cuenta?</p>
+                        <a href="">Registrate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL REGISTER -->
+    <div class="modal fade bd-example-modal-lg" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal__btnClose">
+                    <i class="fas fa-times" data-dismiss="modal" aria-label="Close"></i>
+                </div>
+                <div class="modalLogin">
+                    <h5 class="text-center">Regístrate</h5>
+                    <form class="w-75">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="mb-0">Nombre</label>
+                                <div class="modalLogin__input">
+                                    <i class="fas fa-user mr-3"></i>
+                                    <input type="text" placeholder="Ingresa tu nombre">
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mb-0">Apellido</label>
+                                <div class="modalLogin__input mb-0">
+                                    <i class="fas fa-user mr-3"></i>
+                                    <input type="text" placeholder="Ingresa tu apellido">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mb-0">Email</label>
+                                <div class="modalLogin__input">
+                                    <i class="fas fa-at mr-3"></i>
+                                    <input type="email" placeholder="Ingresa tu correo">
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mb-0">Nro Identificación</label>
+                                <div class="modalLogin__input mb-0">
+                                    <i class="fas fa-id-card mr-3"></i>
+                                    <input type="password" placeholder="Ingresa tu identificación">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mb-0">Contraseña</label>
+                                <div class="modalLogin__input">
+                                    <i class="fas fa-lock mr-3"></i>
+                                    <input type="password" placeholder="Ingresa tu contraseña">
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mb-0">Confirmar contraseña</label>
+                                <div class="modalLogin__input mb-0">
+                                    <i class="fas fa-lock mr-3"></i>
+                                    <input type="password" placeholder="Ingresa tu contraseña">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-2">
+                                <label class="checkbox mb-0">
+                                    Aceptas términos y condiciones
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-end">
+                                <button>Registrarse</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modalLogin__yesAccount mt-4">
+                        <p class="mr-2">Ya tienes una cuenta?</p>
+                        <a href="">Inicia sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
