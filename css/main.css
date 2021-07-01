@@ -324,11 +324,14 @@ ul {
     align-items: center;
 }
 .calculateRigth__img {
-    width: 22%;
+    width: 25%;
     margin-right: 10px;
 }
 .calculateRigth__img img {
     cursor: pointer;
+}
+.calculateRigth__text {
+    width: 75%;
 }
 .calculateRigth__text1 {
     color: var(--primary);
@@ -353,6 +356,17 @@ ul {
     margin-bottom: 0;
     font-size: 1rem;
     text-transform: uppercase;
+}
+.calculate button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 3px 3px 3px 3px;
+    padding: 8px 24px;
+    transition: 1s ease all;
 }
 /**************** 
      STEPS
@@ -418,6 +432,7 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
 }
 .counters__counterSectionLine {
     background: #e7e5e5;

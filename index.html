@@ -39,7 +39,6 @@
                         <li>
                             <a href="#">Servicios</a>
                         </li>
-                        <li>
                             <button class="btn__loggin" data-toggle="modal" data-target="#modalLogin">
                                 <i class="fas fa-user-circle mr-2"></i>
                                 Login
@@ -172,11 +171,14 @@
             <div class="col-md-6">
                 <div class="calculateRigth">
                     <div class="calculateRigth__img">
-                        <img src="assets/images/calculator.png" class="img-fluid" />
+                        <img src="assets/images/calculator.jpg" class="img-fluid" />
                     </div>
                     <div class="calculateRigth__text">
                         <p class="calculateRigth__text1">Calcula el precio</p>
                         <p class="calculateRigth__text2">De tu envío</p>
+                        <button>
+                            Calcular precio
+                        </button>
                     </div>
                 </div>
             </div>
@@ -261,17 +263,17 @@
                 <p class="counter__subtitle">Pide lo que necesitas nosotros estamos listos para atenderte.</p>
                 <div class="counters__container">
                     <div class="counters__counterSection">
-                        <span class="counter__satisfaction">100%</span>
+                        <span class="counter__satisfaction"><span class="countersData">100</span>%</span>
                         <p>Satisfacción</p>
                     </div>
                     <div class="counters__counterSectionLine"></div>
                     <div class="counters__counterSection">
-                        <span class="counter__packages">596+</span>
+                        <span class="counter__packages"><span class="countersData">596</span>+</span>
                         <p>Paquetes</p>
                     </div>
                     <div class="counters__counterSectionLine"></div>
                     <div class="counters__counterSection">
-                        <span class="counter__deliveries">198</span>
+                        <span class="counter__deliveries"><span class="countersData">198</span></span>
                         <p>Envios</p>
                     </div>
                 </div>
@@ -461,6 +463,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <!-- SWIPER -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <!-- CUSTOM -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
 </body>
