@@ -201,7 +201,7 @@ ul {
      HEADER
 ****************/
 .header {
-    height: 86vh;
+    /* height: 86vh; */
     display: flex;
     /* justify-content: center; */
     align-items: center;
