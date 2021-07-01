@@ -314,7 +314,7 @@ ul {
      CALCULATE
 ****************/
 .calculate h4{
-    color: #377DFF;
+    color: var(--secondary);
     font-weight: bold;
     font-size: 1.6rem;
 }
@@ -474,7 +474,7 @@ footer ul li a:hover {
     background: #e7e5e5;
 }
 .footerBase p a {
-    color: red;
+    color: var(--primary);
     text-decoration: none;
 }
 /********************
@@ -497,7 +497,7 @@ footer ul li a:hover {
     align-items: center;
 }
 .modalLogin h5 {
-    color: var(--primary);
+    color: var(--secondary);
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 1.4rem;
