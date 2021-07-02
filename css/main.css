@@ -339,7 +339,6 @@ ul {
     font-weight: 400;
     margin-bottom: 5px;
     line-height: 1;
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 .calculateRigth__text2 {
@@ -348,7 +347,6 @@ ul {
     font-weight: 600;
     margin-bottom: 5px;
     line-height: 1;
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 .calculateRigth__text3 {
@@ -391,6 +389,13 @@ ul {
 }
 .steps__info p {
     color: #77838f;
+}
+.steps__image img {
+    width: 70px;
+    height: 70px;
+}
+.steps__image svg:hover {
+    fill: var(--primary);
 }
 /********************* 
      TRACKINGPAGES
